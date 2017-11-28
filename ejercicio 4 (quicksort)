@@ -1,0 +1,37 @@
+//quick sort en python
+
+def particion(lista, izq, der):
+	global comparaciones // comparaciones
+	pivote = lista[der]   //elegimos el pivote
+	indice = izq          //el indice comenzara en cero 
+
+	for i in xrange(izq, der):
+		comparaciones += 1            // contamos las comparaciones
+		
+		if lista[i] <= pivote:        // comparamos si las lista en posicion i es menor o igual al pivote
+			lista[indice], lista[i] = lista[i], lista[indice]       // si lo es entonces invertimos posiciones y le sumamos uno al indice
+			indice += 1
+
+	lista[indice], lista[der] = lista[der], lista[indice]           // 
+	return indice
+
+def quicksort(lista, izq, der):
+    if izq < der:
+    	pivote_indice = particion(lista, izq, der)
+    	quicksort(lista, izq, pivote_indice-1)
+    	quicksort(lista, pivote_indice+1, der)
+
+
+n= input("ingrese el valor de n")
+lista = [n]
+for x in range(0,n):
+  lista[x]= int(input("Digite elemento:"));
+
+comparaciones = 0
+
+
+quicksort(lista, 0, len(lista)-1)
+
+
+print "Lista ordenada:"
+print lista, "\n"

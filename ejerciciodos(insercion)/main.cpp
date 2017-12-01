@@ -1,3 +1,7 @@
+#include <vector>
+#include <string>
+#include <sstream>
+#include <iostream>
 #include <iostream> /*librerias*/
 using namespace std;
 void Imprimir(int arreglo[] , int n) /*este metodo va a imprimir el arreglo ya ordenado*/
@@ -35,14 +39,27 @@ int main() //metodo main para invocar el metodo imprimir y ejecutar el programa
 {
 
     int n; 
+    string str;
+    vector<int> vect;
+    
     cout<<"Numero de elementos del arreglo"<<endl; //pedimos por teclado que se ingrese la cantidad de elementos que tendra el arreglo
     cin>>n; // declaramos a n 
-    int num[n]; // n sera el tamaño del arreglo
-    for(int i=0;i<n;i++) //ciclo para recorrer el arreglo y llenarlo de elementos que ingrese el usuario
-    {
-        cout<<"Ingrese el numero "<<(i+1)<<endl; // se ingresan los numeros
-        cin>>num[i]; // se asigna numero a cada posicion 
+    int num[n]; // n sera el tamaÃ±o del arreglo
+   
+    cout << "Digite los numeros separados por coma: \n";
+    cin >> str;
+    stringstream ss(str);
+    int i;
+    
+    while (ss >> i){
+        vect.push_back(i);
+        if (ss.peek() == ',')
+            ss.ignore();
     }
+	 for (i=0; i< vect.size(); i++){
+    	num[i] = vect.at(i);
+	}
+
     Insercion_Directa(num,n); //invocacion del metodo para ordenar el arreglo
     Imprimir(num,n); //invocacion de metodo para imprimir (arreglo ya ordenado)
 

@@ -45,7 +45,7 @@ def main():
     print()
     
     if(Encontro):
-        print("El Numero se encuentra y se localiza en la posicion " + str(Num))
+        print("El Numero se encuentra y se localiza en la posicion " + str(Num+1))
     else:
         print("El dato no se encuentra")
     print()

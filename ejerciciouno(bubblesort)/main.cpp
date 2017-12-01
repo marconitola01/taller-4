@@ -1,25 +1,34 @@
 /*programa que implemente en el lenguaje c++ el metodo de ordenamiento por burbuja o bubble sort*/
-
+#include <vector>
+#include <string>
+#include <sstream>
+#include <iostream>
 #include <iostream> /*librerias*/
 #include <conio.h>
 using namespace std;
 int main() /*main para correr nuestro programa*/
 {
-    
+    string str;
+    vector<int> vect;
     int i, j , temp; /*variables a usar*/
-    int n;/* creamos la variable n para que guarde el tamaño del arreglo*/
-    cout<<"ingrese cuantos numeros va a ordenar";cin>>n; /*pedimos por teclado el tamaño del arreglo*/
-	int vector[n]; /*definimos que n sera el tamaño del arreglo*/
-    cout<<" Ingrese los numeros a ordenar "<<endl; /*pedimos los numeros a ordenar*/
-    {
-        for(i=0;i<n;i++)  //ciclo para recorrer el arreglo y llenarlo de numeros que ingrese el usuario*/
-        {
-            cout<<i+1<<" -> ";
-            cin>>vector[i];
-            cout<<endl;
-        }
-    }
+    int n;/* creamos la variable n para que guarde el tamaÃ±o del arreglo*/
+    cout<<"ingrese cuantos numeros va a ordenar";cin>>n; /*pedimos por teclado el tamaÃ±o del arreglo*/
+	int vector[n]; /*definimos que n sera el tamaÃ±o del arreglo*/
+	
+    cout << "Digite los numeros separados por coma: \n";
+    cin >> str;
+    stringstream ss(str);
     
+    while (ss >> i){
+        vect.push_back(i);
+        if (ss.peek() == ',')
+            ss.ignore();
+    }
+    for (i=0; i< vect.size(); i++){
+    	vector[i] = vect.at(i);
+	}
+	
+	 
     for(i=0;i<n;i++) // ciclo para recorrer el arreglo 
     {
         for(j=i+1;j<n;j++)//cilco para recorre el arreglo (j inicia en uno por que nos interesa comparar una posicion mas arriba que la de i para que sean parejas). 

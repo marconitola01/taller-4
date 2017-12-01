@@ -55,7 +55,7 @@
 	
  	if(result >= 0){
  		cout << "El numero " << a[result]<< " se encontro"
-		 " en la posicion " << result << endl;
+		 " en la posicion " << result+1 << endl;
 	 }
 	 else{
 	 	cout << "El numero " << y <<" no se encontro. "<< endl;

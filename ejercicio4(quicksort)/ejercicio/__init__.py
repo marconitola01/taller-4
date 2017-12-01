@@ -6,7 +6,7 @@ def Quick_sort(V): #metodo quicksort
     menor, igual, mayor = [],[],[] #crear array
     
     for i in range(len(V)): #ciclo para recorrer array
-        if(V[i] < V[pivote]): menor.append(V[i]) #añadimos dependiendo la condicion
+        if(V[i] < V[pivote]): menor.append(V[i]) 
         elif(V[i]> V[pivote]): mayor.append(V[i]) 
         else: igual.append(V[i])
         

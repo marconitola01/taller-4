@@ -2,12 +2,12 @@ from random import randint
 from builtins import str
 
 
-def Quick_sort(V):
-    pivote = len(V)//2
-    menor, igual, mayor = [],[],[]
+def Quick_sort(V):           #method quicksort for ordered the array
+    pivote = len(V)//2       #we choose the "pivote" is the half of array  
+    menor, igual, mayor = [],[],[]   #create an empty lists
     
-    for i in range(len(V)):
-        if(V[i] < V[pivote]): menor.append(V[i])
+    for i in range(len(V)):        #cycle for
+        if(V[i] < V[pivote]): menor.append(V[i])         # 
         elif(V[i]> V[pivote]): mayor.append(V[i])
         else: igual.append(V[i])
         

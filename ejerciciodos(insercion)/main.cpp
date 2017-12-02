@@ -4,7 +4,7 @@
 #include <iostream>
 #include <iostream> /*librerias*/
 using namespace std;
-void Imprimir(int arreglo[] , int n) /*este metodo va a imprimir el arreglo ya ordenado*/
+void Imprimir(int arreglo[] , int n) /*this method print tha array already finish*/
 {
     cout<<"numeros ordenados de menor a mayor"<<endl;
 
@@ -15,19 +15,19 @@ void Imprimir(int arreglo[] , int n) /*este metodo va a imprimir el arreglo ya o
 
 void Insercion_Directa(int arreglo[] , int n)
 {
-    int i,k,aux; //variables que usaremos
+    int i,k,aux; //variables tu use
 
-    for(i=0;i<=n-1;i++) // ciclo for para recorrer el arreglo
+    for(i=0;i<=n-1;i++) // cycle for
     {
 
-        aux=arreglo[i]; // asignamos a la variable aux(auxiliar) el valor de la posicion de i en el arreglo (seria la posicion uno)
+        aux=arreglo[i]; // we assign to the variable aux (auxiliary) the value of the position of i in the array (it would be position one)
         k=i-1;   // 
-        while((k>=0) && (aux<arreglo[k])) // mientras queden posiciones y el valor de aux
-        {                                 // sea menor que el de los de la izquierda, se desplaza hacia la derecha 
+        while((k>=0) && (aux<arreglo[k])) // while they remain positions and the value of aux
+        {                                 // is smaller than the one on the left, moves to the right
             arreglo[k+1]=arreglo[k];
             k=k-1;
         }
-        arreglo[k+1]=aux; // ponemos al auxiliar en su sitio
+        arreglo[k+1]=aux; // we put the auxiliai in her possition
 
     }
 
@@ -35,16 +35,16 @@ void Insercion_Directa(int arreglo[] , int n)
 
 }
 
-int main() //metodo main para invocar el metodo imprimir y ejecutar el programa
+int main() //method main to call the method to print and execute the program
 {
 
     int n; 
     string str;
     vector<int> vect;
     
-    cout<<"Numero de elementos del arreglo"<<endl; //pedimos por teclado que se ingrese la cantidad de elementos que tendra el arreglo
-    cin>>n; // declaramos a n 
-    int num[n]; // n sera el tamaño del arreglo
+    cout<<"Numero de elementos del arreglo"<<endl; //We ask for the keyboard to enter the amount of elements that will have the array
+    cin>>n; //  
+    int num[n]; // n will be the size of the array
    
     cout << "Digite los numeros separados por coma: \n";
     cin >> str;
@@ -60,9 +60,9 @@ int main() //metodo main para invocar el metodo imprimir y ejecutar el programa
     	num[i] = vect.at(i);
 	}
 
-    Insercion_Directa(num,n); //invocacion del metodo para ordenar el arreglo
-    Imprimir(num,n); //invocacion de metodo para imprimir (arreglo ya ordenado)
+    Insercion_Directa(num,n); //call the method to order the arrangement
+    Imprimir(num,n); //invocation of method to print (arrangement already ordered)
 
     return 0;
-    system("pausa");// lo usamos para que el programa no se cierra al terminar
+    system("pausa");// we use it to pause the program
 }

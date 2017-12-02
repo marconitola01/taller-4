@@ -9,10 +9,10 @@ public class MergeSort
 		  System.out.println("ingrese la cantidad de numeros"); // ask the value
                 n=in.nextInt();    // we keep the value in n
 		int A []=new int[n],i;  // we create an array, which size is n
-		for(i=0;i<n;++i)       // cycle that travels the array and fill it asking for data from keyboard
+		for(i=0;i<n;++i){       // cycle that travels the array and fill it asking for data from keyboard
 		   System.out.println("ingrese numero");	//ask value
                     A[i]=in.nextInt();                          // a cada posicion le asignamos un numero 
-		
+		}
 		
 		System.out.println("lista original"+"\n"+Arrays.toString(A));  // we print the original list
                 A=MergeSort(A);         // we call the MergeSort method that will order 

@@ -13,7 +13,7 @@ public class MergeSort
 		   System.out.println("ingrese numero");	//ask value
                     A[i]=in.nextInt();                          // a cada posicion le asignamos un numero 
 		
-		}
+		
 		System.out.println("lista original"+"\n"+Arrays.toString(A));  // we print the original list
                 A=MergeSort(A);         // we call the MergeSort method that will order 
 		System.out.println();   // print an space 
